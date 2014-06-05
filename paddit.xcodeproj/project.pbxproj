@@ -7,12 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		104A191A19402D610078706A /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 104A191919402D610078706A /* Post.swift */; };
 		10D3A0C419401263003F4A66 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3A0C319401263003F4A66 /* AppDelegate.swift */; };
 		10D3A0C619401263003F4A66 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3A0C519401263003F4A66 /* MasterViewController.swift */; };
 		10D3A0C819401263003F4A66 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3A0C719401263003F4A66 /* DetailViewController.swift */; };
 		10D3A0CB19401263003F4A66 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 10D3A0C919401263003F4A66 /* Main.storyboard */; };
 		10D3A0CD19401263003F4A66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D3A0CC19401263003F4A66 /* Images.xcassets */; };
 		10D3A0D919401263003F4A66 /* padditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3A0D819401263003F4A66 /* padditTests.swift */; };
+		10D3A0E4194012B8003F4A66 /* Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3A0E3194012B8003F4A66 /* Reddit.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,6 +28,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		104A191919402D610078706A /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		10D3A0BE19401263003F4A66 /* paddit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = paddit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D3A0C219401263003F4A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D3A0C319401263003F4A66 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +39,7 @@
 		10D3A0D219401263003F4A66 /* padditTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = padditTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		10D3A0D719401263003F4A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D3A0D819401263003F4A66 /* padditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = padditTests.swift; sourceTree = "<group>"; };
+		10D3A0E3194012B8003F4A66 /* Reddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reddit.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		104A191819402D570078706A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				104A191919402D610078706A /* Post.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		10D3A0B519401263003F4A66 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +89,8 @@
 		10D3A0C019401263003F4A66 /* paddit */ = {
 			isa = PBXGroup;
 			children = (
+				104A191819402D570078706A /* Models */,
+				10D3A0E2194012A2003F4A66 /* Networking */,
 				10D3A0C319401263003F4A66 /* AppDelegate.swift */,
 				10D3A0C519401263003F4A66 /* MasterViewController.swift */,
 				10D3A0C719401263003F4A66 /* DetailViewController.swift */,
@@ -110,6 +124,14 @@
 				10D3A0D719401263003F4A66 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		10D3A0E2194012A2003F4A66 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				10D3A0E3194012B8003F4A66 /* Reddit.swift */,
+			);
+			name = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,6 +236,8 @@
 				10D3A0C819401263003F4A66 /* DetailViewController.swift in Sources */,
 				10D3A0C619401263003F4A66 /* MasterViewController.swift in Sources */,
 				10D3A0C419401263003F4A66 /* AppDelegate.swift in Sources */,
+				10D3A0E4194012B8003F4A66 /* Reddit.swift in Sources */,
+				104A191A19402D610078706A /* Post.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -403,6 +427,7 @@
 				10D3A0DE19401263003F4A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		10D3A0DF19401263003F4A66 /* Build configuration list for PBXNativeTarget "padditTests" */ = {
 			isa = XCConfigurationList;
@@ -411,6 +436,7 @@
 				10D3A0E119401263003F4A66 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
