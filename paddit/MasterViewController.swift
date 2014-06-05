@@ -82,6 +82,7 @@ class MasterViewController: UITableViewController {
         
         cell.textLabel.text = post.title
         
+        
         return cell
     }
 

@@ -11,7 +11,7 @@ import Foundation
 
 class Post {
     
-    var approvedBy : String?
+    var approvedBy : String!
     var author : String?
     var clicked = false
     var created : NSDate?
@@ -28,108 +28,83 @@ class Post {
     var ups = 0
     var url : String?
     
+    func unwrapAnyObjectFromDictionary(key : String, object : Dictionary<String,AnyObject>) -> AnyObject? {
+        
+        let obj : AnyObject? = object[key]
+        
+        return obj
+    }
     
     init(object : Dictionary<String,AnyObject>) {
-        
+        //println("Object: \(object)")
         let dataObject : AnyObject? = object["data"]
         
         if let data = dataObject as? Dictionary<String,AnyObject> {
             
-            let approvedByObject : AnyObject? = data["approved_by"]
-            
-            if let approvedBy = approvedByObject as? String {
-                self.approvedBy = approvedBy
+            if let value = self.unwrapAnyObjectFromDictionary("approved_by", object: data) as? String {
+                self.approvedBy = value
             }
             
-            let authorObject : AnyObject? = data["author"]
-            
-            if let author = authorObject as? String {
-                self.author = author
+            if let value = self.unwrapAnyObjectFromDictionary("author", object: data) as? String {
+                self.author = value
             }
             
-            let clickedObject : AnyObject? = data["clicked"]
-            
-            if let clicked = clickedObject as? NSNumber {
-                self.clicked = clicked.boolValue
+            if let value = self.unwrapAnyObjectFromDictionary("clicked", object: data) as? NSNumber {
+                self.clicked = value.boolValue
             }
             
-            let createdObject : AnyObject? = data["created_utc"]
-            
-            if let created = createdObject as? NSNumber {
-                self.created = NSDate(timeIntervalSince1970: created.doubleValue)
+            if let value = self.unwrapAnyObjectFromDictionary("created_utc", object: data) as? NSNumber {
+                self.created = NSDate(timeIntervalSince1970: value.doubleValue)
             }
             
-            let domainObject : AnyObject? = data["domain"]
-            
-            if let domain = domainObject as? String {
-                self.domain = domain
+            if let value = self.unwrapAnyObjectFromDictionary("domain", object: data) as? String {
+                self.domain = value
             }
             
-            let downsObject : AnyObject? = data["downs"]
-            
-            if let downs = downsObject as? NSNumber {
-                self.downs = downs.integerValue
+            if let value = self.unwrapAnyObjectFromDictionary("downs", object: data) as? NSNumber {
+                self.downs = value.integerValue
             }
             
-            let idObject : AnyObject? = data["id"]
-            
-            if let id = idObject as? String {
-                self.id = id
+            if let value = self.unwrapAnyObjectFromDictionary("id", object: data) as? String {
+                self.id = value
             }
             
-            let isSelfObject : AnyObject? = data["is_self"]
-            
-            if let isSelf = isSelfObject as? NSNumber {
-                self.isSelf = isSelf.boolValue
+            if let value = self.unwrapAnyObjectFromDictionary("is_self", object: data) as? NSNumber {
+                self.isSelf = value.boolValue
             }
             
-            let numCommentsObject : AnyObject? = data["num_comments"]
-            
-            if let numComments = numCommentsObject as? NSNumber {
-                self.numComments = numComments.integerValue
+            if let value = self.unwrapAnyObjectFromDictionary("num_comments", object: data) as? NSNumber {
+                self.numComments = value.integerValue
             }
             
-            let over18Object : AnyObject? = data["over_18"]
-            
-            if let over18 = over18Object as? NSNumber {
-                self.over18 = over18.boolValue
+            if let value = self.unwrapAnyObjectFromDictionary("over_18", object: data) as? NSNumber {
+                self.over18 = value.boolValue
             }
             
-            let permalinkObject : AnyObject? = data["permalink"]
-            
-            if let permalink = permalinkObject as? String {
-                self.permalink = permalink
+            if let value = self.unwrapAnyObjectFromDictionary("permalink", object: data) as? String {
+                self.permalink = value
             }
             
-            let scoreObject : AnyObject? = data["score"]
-            
-            if let score = scoreObject as? NSNumber {
-                self.score = score.integerValue
+            if let value = self.unwrapAnyObjectFromDictionary("score", object: data) as? NSNumber {
+                self.score = value.integerValue
             }
             
-            let thumbnailObject : AnyObject? = data["thumbnail"]
-            
-            if let thumbnail = thumbnailObject as? String {
-                self.thumbnail = thumbnail
+            if let value = self.unwrapAnyObjectFromDictionary("thumbnail", object: data) as? String {
+                self.thumbnail = value
             }
             
-            let titleObject : AnyObject? = data["title"]
-            
-            if let title = titleObject as? String {
-                self.title = title
+            if let value = self.unwrapAnyObjectFromDictionary("title", object: data) as? String {
+                self.title = value
             }
             
-            let upsObject : AnyObject? = data["ups"]
-            
-            if let ups = upsObject as? NSNumber {
-                self.ups = ups.integerValue
+            if let value = self.unwrapAnyObjectFromDictionary("ups", object: data) as? NSNumber {
+                self.ups = value.integerValue
             }
             
-            let urlObject : AnyObject? = data["url"]
-            
-            if let url = urlObject as? String {
-                self.url = url
+            if let value = self.unwrapAnyObjectFromDictionary("url", object: data) as? String {
+                self.url = value
             }
+            
             
         }
 
