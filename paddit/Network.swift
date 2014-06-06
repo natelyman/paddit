@@ -23,7 +23,36 @@ class Network {
     
     func get(path : String, params : Dictionary<String,String>?, completionHandler : (data : NSData?)->(), failureHandler : (error : NSError)->()) {
         
+        self.request("GET", path: path, params: params, completionHandler: completionHandler, failureHandler: failureHandler)
+    }
+    
+    func post(path : String, completionHandler : (data : NSData?)->(), failureHandler : (error : NSError)->()) {
+        self.post(path,params:nil,completionHandler:completionHandler,failureHandler:failureHandler)
+    }
+    
+    func post(path : String, params : Dictionary<String,String>?, completionHandler : (data : NSData?)->(), failureHandler : (error : NSError)->()) {
+        
+        self.request("POST", path: path, params: params, completionHandler: completionHandler, failureHandler: failureHandler)
+    }
+    
+    func put(path : String, completionHandler : (data : NSData?)->(), failureHandler : (error : NSError)->()) {
+        self.put(path,params:nil,completionHandler:completionHandler,failureHandler:failureHandler)
+    }
+    
+    func put(path : String, params : Dictionary<String,String>?, completionHandler : (data : NSData?)->(), failureHandler : (error : NSError)->()) {
+        
+        self.request("PUT", path: path, params: params, completionHandler: completionHandler, failureHandler: failureHandler)
+    }
+    
+    func request(method : String?, path : String, params : Dictionary<String,String>?, completionHandler : (data : NSData?)->(), failureHandler : (error : NSError)->()) {
+        
         var request = NSMutableURLRequest(URL: NSURL(string:self.baseUrl+path))
+        
+        if let verbValue = method {
+            request.HTTPMethod = verbValue
+        }else{
+            request.HTTPMethod = "GET"
+        }
         
         if let paramValues = params {
             for (key,value) in paramValues {
@@ -40,9 +69,7 @@ class Network {
             
             completionHandler(data: data)
             
-        }.resume()
-        
-        
+            }.resume()
     }
     
     
