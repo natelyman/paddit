@@ -15,6 +15,7 @@
 		10D3A0CD19401263003F4A66 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10D3A0CC19401263003F4A66 /* Images.xcassets */; };
 		10D3A0D919401263003F4A66 /* padditTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3A0D819401263003F4A66 /* padditTests.swift */; };
 		10D3A0E4194012B8003F4A66 /* Reddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D3A0E3194012B8003F4A66 /* Reddit.swift */; };
+		10D6D1BF19417F3400402CB2 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6D1BE19417F3400402CB2 /* Network.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		10D3A0D719401263003F4A66 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		10D3A0D819401263003F4A66 /* padditTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = padditTests.swift; sourceTree = "<group>"; };
 		10D3A0E3194012B8003F4A66 /* Reddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reddit.swift; sourceTree = "<group>"; };
+		10D6D1BE19417F3400402CB2 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +132,7 @@
 			isa = PBXGroup;
 			children = (
 				10D3A0E3194012B8003F4A66 /* Reddit.swift */,
+				10D6D1BE19417F3400402CB2 /* Network.swift */,
 			);
 			name = Networking;
 			sourceTree = "<group>";
@@ -236,6 +239,7 @@
 				10D3A0C819401263003F4A66 /* DetailViewController.swift in Sources */,
 				10D3A0C619401263003F4A66 /* MasterViewController.swift in Sources */,
 				10D3A0C419401263003F4A66 /* AppDelegate.swift in Sources */,
+				10D6D1BF19417F3400402CB2 /* Network.swift in Sources */,
 				10D3A0E4194012B8003F4A66 /* Reddit.swift in Sources */,
 				104A191A19402D610078706A /* Post.swift in Sources */,
 			);
